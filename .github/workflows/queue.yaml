@@ -1,4 +1,4 @@
-name: merge group
+name: ci
 
 on:
   merge_group:
@@ -11,3 +11,9 @@ jobs:
     steps:
       - name: echo
         run: echo "hello"
+
+  echo2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo
+        run: echo "hello world"
