@@ -1,4 +1,4 @@
-name: merge group
+name: ci
 
 on:
   merge_group:
