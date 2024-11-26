@@ -2,18 +2,22 @@ name: ci
 
 on:
   merge_group:
-  pull_request:
+  push:
+    branches-ignore:
+      - gh-readonly-queue/**
     
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
 
 jobs:
   echo:
     runs-on: ubuntu-latest
     steps:
       - name: echo
-        run: exit 1
+        run: echo "hello"
 
   echo2:
     runs-on: ubuntu-latest
     steps:
       - name: echo
-        run: exit 1
+        run: echo "hello"
