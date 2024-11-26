@@ -3,11 +3,10 @@ name: ci
 on:
   merge_group:
   push:
-    branches-ignore:
-      - gh-readonly-queue/**
     
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   echo:
@@ -21,3 +20,4 @@ jobs:
     steps:
       - name: echo
         run: echo "hello"
+
