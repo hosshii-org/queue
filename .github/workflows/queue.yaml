@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo
-        run: echo "hello"
+        run: exit 1
 
   echo2:
     runs-on: ubuntu-latest
