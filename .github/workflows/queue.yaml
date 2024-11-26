@@ -3,8 +3,6 @@ name: ci
 on:
   merge_group:
   push:
-    branches-ignore:
-      - gh-readonly-queue/**
     
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
