@@ -1,0 +1,21 @@
+name: merge
+
+on:
+  pull_request:
+    
+jobs:
+  merge-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/create-github-app-token@v1
+        id: app-token
+        with:
+          app-id: ${{ secrets.APP_ID }}
+          private-key: ${{ secrets.APP_KEY }}
+      - name: merge pr
+        run: |
+          gh pr merge 9 --repo ${GITHUB_REPOSITORY} \
+            --admin --merge
+        env:
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
+

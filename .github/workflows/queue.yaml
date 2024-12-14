@@ -9,12 +9,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  echo:
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo
-        run: exit 1
-
   echo2:
     runs-on: ubuntu-latest
     steps:
