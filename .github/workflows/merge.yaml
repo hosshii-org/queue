@@ -14,7 +14,7 @@ jobs:
           private-key: ${{ secrets.APP_KEY }}
       - name: merge pr
         run: |
-          gh pr merge --repo ${GITHUB_REPOSITORY} \
+          gh pr merge 9 --repo ${GITHUB_REPOSITORY} \
             --admin --merge
         env:
           GH_TOKEN: ${{ steps.app-token.outputs.token }}
